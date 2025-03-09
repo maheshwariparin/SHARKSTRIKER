@@ -82,14 +82,9 @@ const Secondnav = () => {
             <option>{autoRefresh}</option>
           </select>
         </span>
-
-        
         <div className="bg-[#142a37] text-white h-9 rounded border-gray-200 border outline-none flex flex-col text-xs">
         <BsThreeDotsVertical  className='text-lg mt-2 text-white'/>
-          
         </div>
-
-
       </div>
     </div>
   );

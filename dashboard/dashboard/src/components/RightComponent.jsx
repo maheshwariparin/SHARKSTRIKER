@@ -33,32 +33,31 @@ const RightComponent = () => {
         <p className='text-xs'>Dataset 1</p>
       </div>
 
-      <ResponsiveContainer width="100%" height={270}>
-  <ScatterChart margin={{ top: 10, right: 7, bottom: 30, left: 20 }}>
+    <ResponsiveContainer width="100%" height={270}>
+  <ScatterChart margin={{ top: 10, right: 7, bottom: 30, left: 20 }}> 
     <CartesianGrid stroke="#444" strokeDasharray="0 0" /> 
     <XAxis 
       type="number" 
       dataKey="x" 
       domain={[0, 90]} 
       ticks={[0, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90]} 
-      axisLine={false} 
+      axisLine={true} 
       label={{ value: 'Severity', position: 'bottom', fill: '#ffffff', fontSize: 15 }} 
     />
-    <YAxis 
+
+      <YAxis 
   type="number" 
   dataKey="y" 
   domain={[0, 90]} 
   ticks={[0, 15, 30, 45, 60, 75, 90]} 
   axisLine={false} 
   label={{ value: 'Fidelity', angle: -90, position: 'insideLeft', fill: '#ffffff', fontSize: 15 }} 
-/>
+       />
 
     <Tooltip cursor={{ strokeDasharray: '3 3' }} />
     <Scatter name="Dataset 1" data={staticData} fill="#FF6384" />
   </ScatterChart>
 </ResponsiveContainer>
-
-
 
       <div className="flex items-center mt-1">
         <span className="text-yellow-400 text-xl"><FaKey /></span>

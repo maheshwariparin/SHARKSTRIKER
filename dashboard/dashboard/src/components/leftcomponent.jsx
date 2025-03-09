@@ -26,22 +26,25 @@ const Leftnav = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setData(data.map((item) => ({
-                ...item,
-                value: (Math.random() * (5.5 - 4.0) + 4.0).toFixed(1),
-            })));
+            setData((prevData) => 
+                prevData.map((item) => ({
+                    ...item,
+                    value: (Math.random() * (5.5 - 4.0) + 4.0).toFixed(1),
+                }))
+            );
         }, 3000);
+    
         return () => clearInterval(interval);
-    }, [data]);
+    }, []);
+    
 
     return (
-        <div className="w-[400px] h-[440px] p-3 bg-[#142a37] text-white rounded-r-3xl ">
-            <h2 className="text-lg text-center mb-3">Current to Suspect Assets</h2>
-            <RadarChart cx={165} cy={100} outerRadius={80} width={300} height={200} data={staticData}>
+   <div className="w-[400px] h-[440px] p-3 bg-[#142a37] text-white rounded-r-3xl ">
+    <h2 className="text-lg text-center mb-3">Current to Suspect Assets</h2>
+    <RadarChart cx={165} cy={100} outerRadius={80} width={300} height={200} data={data}>
     <PolarGrid />
-    <PolarAngleAxis dataKey="aspect" tick={{ fill: "#ffffff", fontSize: 12 }} />
-    <PolarRadiusAxis angle={30} domain={[0, 6]} />
-    
+    <PolarAngleAxis dataKey="aspect" tick={{ fill: "#ffffff", fontSize: 12}} />
+    <PolarRadiusAxis angle={90} domain={[0, 6]} />
     <Radar 
         name="Risk" 
         dataKey="value" 
@@ -50,10 +53,9 @@ const Leftnav = () => {
         fillOpacity={0.3} 
         isAnimationActive={true} 
         animationBegin={0} 
-        animationDuration={2000} 
+        animationDuration={1000} 
         animationEasing="ease-in-out" 
-        dot={{ stroke: "#ff3434", fill: "#ff3434", r: 3 }} 
-        activeDot={{ r: 6, stroke: "#ff3434", fill: "#ff5f5f" }}
+        dot={{ stroke: "#ff3434", fill: "#ff3434", r: 3 }}
     />
 </RadarChart>
 

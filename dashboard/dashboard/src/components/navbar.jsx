@@ -5,8 +5,6 @@ import { BsFillHeartbreakFill } from "react-icons/bs";
 import { LuBellRing } from "react-icons/lu";
 export default function Navbar() {
   
- 
-
   const [activeItem, setActiveItem] = useState("Dashboard");
 
   const navItems = [
@@ -45,8 +43,9 @@ export default function Navbar() {
       {activeItem === item && (
         <div className="mt-2 h-0.5 bg-white w-full"></div>
       )}
-    </div><div className="w-[0.5px] h-4 bg-gray-400 mt-1"></div></>
-
+    </div>
+    <div className="w-[0.5px] h-4 bg-gray-400 mt-1"></div>
+    </>
   ))}
 </nav>
 
@@ -68,10 +67,6 @@ export default function Navbar() {
           <FaQuestionCircle className="ml-1 text-yellow-200" />
         </div>
       </div>
-
-     
-        
-
     
   );
 }

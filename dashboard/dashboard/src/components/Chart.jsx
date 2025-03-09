@@ -16,13 +16,9 @@ const ChartComponent = () => {
           <XAxis dataKey="time" tick={{ fill: "#9ca3af", fontSize: 10 }} />
           <YAxis hide />
           <Tooltip />
-
-      
           <Area type="monotone" dataKey="value1" stroke="#14b8a6" fill="#14b8a680" />
           <Area type="monotone" dataKey="value2" stroke="#f43f5e" fill="#f43f5e80" />
           <Area type="monotone" dataKey="value3" stroke="#3b82f6" fill="#3b82f680" />
-
-         
           <Line type="monotone" dataKey="value1" stroke="#14b8a6" dot={{ fill: "#14b8a6" }} />
           <Line type="monotone" dataKey="value2" stroke="#f43f5e" dot={{ fill: "#f43f5e" }} />
           <Line type="monotone" dataKey="value3" stroke="#3b82f6" dot={{ fill: "#3b82f6" }} />
